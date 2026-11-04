@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="A precise, accessible temperature converter for Celsius, Fahrenheit, and Kelvin." />
+    <title>Therma — Temperature Converter</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" href="premium.css" />
+    <script src="script.js" defer></script>
+  </head>
+  <body>
+    <main class="page-shell">
+      <section class="converter-card" aria-labelledby="page-title">
+        <div class="card-heading"><div class="therma-mark" aria-hidden="true"><span></span><i></i></div><p class="eyebrow">Every degree, clearly</p><h1 id="page-title">Temperature <em>converter.</em></h1><p class="intro">Convert between Celsius, Fahrenheit, and Kelvin with reliable, real-time calculations.</p></div>
+
+        <form id="converter-form" novalidate>
+          <div class="field-group"><label for="temperature">Temperature value</label><div class="input-wrap"><input id="temperature" name="temperature" type="number" inputmode="decimal" step="any" placeholder="e.g. 25" aria-describedby="temperature-hint error-message" /><span id="input-symbol" aria-hidden="true">°C</span></div><p class="field-hint" id="temperature-hint">Decimals and valid negative temperatures are supported.</p></div>
+          <div class="field-group"><label for="unit">Convert from</label><div class="select-wrap"><select id="unit" name="unit" aria-describedby="unit-hint"><option value="celsius">Celsius (°C)</option><option value="fahrenheit">Fahrenheit (°F)</option><option value="kelvin">Kelvin (K)</option></select></div><p class="field-hint" id="unit-hint">Select the unit used for your input.</p></div>
+          <p class="error-message" id="error-message" role="alert" aria-live="assertive"></p>
+          <button class="convert-button" type="submit">Convert temperature <span aria-hidden="true">→</span></button>
+        </form>
+
+        <section class="results" id="results" aria-live="polite" aria-labelledby="results-heading" hidden>
+          <div class="results-heading"><p class="eyebrow">Converted values</p><h2 id="results-heading">Your results</h2></div>
+          <div class="result-grid"><article class="result-card celsius"><span class="result-icon" aria-hidden="true">C</span><div><p>Celsius</p><strong id="celsius-result">—</strong></div></article><article class="result-card fahrenheit"><span class="result-icon" aria-hidden="true">F</span><div><p>Fahrenheit</p><strong id="fahrenheit-result">—</strong></div></article><article class="result-card kelvin"><span class="result-icon" aria-hidden="true">K</span><div><p>Kelvin</p><strong id="kelvin-result">—</strong></div></article></div>
+        </section>
+      </section>
+      <p class="absolute-note"><span aria-hidden="true">✦</span> Temperatures below absolute zero are not physically possible.</p>
+    </main>
+  </body>
+</html>
