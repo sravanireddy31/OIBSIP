@@ -1,0 +1,27 @@
+/* Targeted layout safeguards for anchored scrolling and narrow screens. */
+section[id] {
+  scroll-margin-top: 92px;
+}
+
+.hero-copy,
+.hero-visual,
+.about-copy,
+.about-art {
+  min-width: 0;
+}
+
+@media (max-width: 600px) {
+  .navbar {
+    align-items: flex-start;
+    flex-direction: column;
+  }
+
+  .nav-links {
+    justify-content: flex-start;
+    width: 100%;
+  }
+
+  .hero h1 {
+    font-size: 2.6rem;
+  }
+}
